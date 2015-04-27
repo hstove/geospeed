@@ -539,6 +539,7 @@ DEPENDENCIES
   rspec-rails
   ruby-progressbar
   ruby_gntp
+  sass
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   sidekiq
