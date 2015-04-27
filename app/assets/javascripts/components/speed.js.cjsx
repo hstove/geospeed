@@ -13,5 +13,5 @@
           @setState speed: speed
   render: ->
     <div id="speed-container">
-      <span className="speed">{@state.speed} {@props.speedFormat}</span>
+      <span className="speed">{Math.round(@state.speed)} {@props.speedFormat}</span>
     </div>
