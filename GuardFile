@@ -4,13 +4,15 @@ guard 'rails' do
   watch(%r{^(lib)/.*})
 end
 
-guard 'livereload' do
+guard 'livereload', override_url: true do
   watch(%r{app/views/.+.(erb|haml|slim)$})
   watch(%r{app/helpers/.+.rb})
   watch(%r{public/.+.(css|js|html)})
   watch(%r{config/locales/.+.yml})
   # Rails Assets Pipeline
-  watch(%r{(app|vendor)/assets/w+/(.+.(css|js|html)).*})  { |m| "/assets/#{m[2]}" }
+  watch(%r{app/assets/javascripts/(.+.(\.js|html)).*})  { |m| "/assets/#{m[1]}" }
+  watch(%r{app/assets/stylesheets/(.+.(\.css)).*})  { |m| "/assets/#{m[1]}" }
+  # watch(%r{app/assets/javascripts/components/(.+.(\.js)).*}) { |m| "/assets/components/#{m[1]}" }
 end
 
 # Note: The cmd option is now required due to the increasing number of ways
@@ -51,6 +53,6 @@ end
 #  - :concurrency (defaults to 1)
 #  - :timeout
 #  - :environment (corresponds to RAILS_ENV for the Sidekiq worker)
-guard 'sidekiq', :environment => 'development' do
-  watch(%r{^workers/(.+).rb$})
-end
+# guard 'sidekiq', :environment => 'development' do
+#   watch(%r{^workers/(.+).rb$})
+# end

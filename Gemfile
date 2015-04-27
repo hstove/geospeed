@@ -82,6 +82,8 @@ gem 'sidekiq'
 gem 'rails_admin'
 gem 'activerecord-postgis-adapter', '3.0.0.beta1'
 gem 'httparty'
+gem 'sprockets-coffee-react'
+gem 'react-rails'
 group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

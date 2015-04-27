@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'app' => "app#show", as: :app
+
   get 'speed_limit/show'
 
   devise_for :users
