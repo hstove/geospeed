@@ -10,7 +10,7 @@
           @setState speedInMPS: speed
   render: ->
     speed = @state.speedInMPS
-    if @props.speedFormat == 'MPH'
+    if @props.speedFormat == 'mph'
       speed *= 2.23694
     else
       speed *= 3.6
