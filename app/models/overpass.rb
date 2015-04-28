@@ -10,17 +10,21 @@ class Overpass
     page = Nokogiri::HTML(res)
     speeds = page.css('[k="maxspeed"]').collect { |el| el['v'] }
     ap speeds
+    res = {
+      maxspeed: nil,
+      format: nil
+    }
     if speeds.size > 0
       value = speeds.group_by(&:itself).values.max_by(&:size).first
       parts = value.split(' ')
       ap value
+      res[:format] = parts[1]
       if parts[1] == 'mph'
-        parts[0].to_i
+        res[:maxspeed] = parts[0].to_i
       else
-        parts[0].to_i * 0.621371
+        res[:maxspeed] = parts[0].to_i * 0.621371
       end
-    else
-      nil
     end
+    res
   end
 end

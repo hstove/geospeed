@@ -6,13 +6,38 @@
   .speed
     font-size: 36px
 
+$six-plus-width: 414
+$six-width: 375
+$five-width: 320
+$height: 250px
+
 #speed-limit-container
-  width: 300px
-  margin: 100px auto
-  height: 300px
+  width: $height
+  height: $height
   border-radius: 10px
   border: 2px solid black
   text-align: center
+  position: fixed
+  top: 50%
+  margin-top: -($height / 2)
+  margin-left: -($height / 2)
+  left: 50%
   #speed-limit
-    font-size: 160px
-    line-height: 300px
+    font-size: 120px
+    line-height: $height * 2/3
+  #speed-limit-label
+    font-size: 30px
+    line-height: $height * 1/8
+    margin-top: 20px
+    display: inline-block
+    letter-spacing: 8px
+    > span
+      display: inline-block
+
+#app
+  min-height: 100%
+
+html
+  height: 100%
+  body
+    height: 100%

@@ -21,4 +21,4 @@
 #= require_tree .
 
 $ ->
-  @app = React.render <App />, document.getElementById('app')
+  @app = React.render <App />, $('body')[0]

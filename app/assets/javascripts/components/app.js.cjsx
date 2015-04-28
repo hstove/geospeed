@@ -8,9 +8,13 @@ watchId = null
 @App = React.createClass
   displayName: 'App'
   getInitialState: ->
-    state = Storage.state ['introed', 'geoAllowed', 'lastPosition', 'speedFormat']
+    state = Storage.state [
+      'introed', 'geoAllowed', 'lastPosition', 'speedFormat', 'backgroundColor',
+      'textColor'
+    ]
     state.geoError = null
-    state.speedFormat ||= 'MPH'
+    state.backgroundColor ||= 'rgba(142, 68, 173,1.0)'
+    state.textColor ||= 'rgba(236, 240, 241,1.0)'
     state
 
   render: ->
@@ -18,7 +22,8 @@ watchId = null
 
     if @state.introed
       if @state.geoAllowed
-        appInner = <SpeedApp speedFormat={@state.speedFormat}/>
+        appInner = <SpeedApp speedFormat={@state.speedFormat}
+          textColor={@state.textColor}/>
       else if !navigator?.geolocation
         appInner = <InvalidBrowser />
       else
@@ -29,11 +34,22 @@ watchId = null
     else
       inner = <Intro getStarted={@getStarted}/>
 
-    <div className="row">
-      <div className="col-xs-12">
-        {inner}
+    appStyles =
+      backgroundColor: @state.backgroundColor
+      color: @state.textColor
+
+    <div id="app" style={appStyles}>
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12">
+            {inner}
+          </div>
+        </div>
       </div>
     </div>
+
+  componentDidMount: ->
+    Geo.getFormatUpdates(@)
 
   dumpState: ->
     for key, val of @state

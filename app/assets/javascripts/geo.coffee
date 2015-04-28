@@ -1,6 +1,13 @@
 class @Geo
   @successCbs: []
   @errorCbs: []
+
+  @speedFormatComponents: []
+  @getFormatUpdates: (component) -> @speedFormatComponents.push component
+  @setFormat: (format) ->
+    for component in @speedFormatComponents
+      component.setState(speedFormat: format)
+
   @watchId: null
   @init: (opts) ->
     options =

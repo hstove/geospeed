@@ -2,7 +2,7 @@
   displayName: 'SpeedLimit'
   notAvailable: "n/a"
   getInitialState: ->
-    speedLimit: @notAvailable
+    speedLimit: null
   componentDidMount: ->
     Geo.init
       success: ({coords}) =>
@@ -11,10 +11,9 @@
         $.ajax
           url: url
           dataType: 'json'
-          success: ({maxspeed}) =>
+          success: ({maxspeed, format}) =>
+            Geo.setFormat(format)
             if maxspeed
-              if @props.speedFormat != 'MPH'
-                maxspeed *= 1.60934
               @setState speedLimit: Math.round(maxspeed)
             else
               @setState speedLimit: @notAvailable
@@ -22,6 +21,11 @@
 
 
   render: ->
-    <div id="speed-limit-container">
-      <span id="speed-limit">{@state.speedLimit}</span>
+    speedClasses = classNames('fa fa-circle-o-notch fa-spin': !@state.speedLimit)
+    containerStyle =
+      borderColor: @props.textColor
+    <div id="speed-limit-container" style={containerStyle}>
+      <span id="speed-limit-label">SPEED<br/>LIMIT</span>
+      <br/>
+      <span id="speed-limit" className={speedClasses}>{@state.speedLimit}</span>
     </div>
