@@ -14,13 +14,8 @@
       </h3>
       <br/>
       <br/>
-      <h3>
-        Tap the button below to start that short process.
-      </h3>
-      <br/>
-      <br/>
       <p>
-        <a href="#" className="btn btn-primary btn-lg" onClick={@getPermission}
+        <a href="#" className="btn btn-success btn-lg" onClick={@getPermission}
           disabled={@loading}>
           Give Us Location Permission
         </a>
