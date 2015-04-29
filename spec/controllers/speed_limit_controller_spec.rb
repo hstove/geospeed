@@ -6,8 +6,16 @@ RSpec.describe SpeedLimitController, type: :controller do
     it "returns http success" do
       get :show, latitude: 48.7588802, longitude: -122.4875853
       data = JSON.parse(response.body)
-      expect(data['maxspeed']).to equal(25)
-      expect("#{data['format']}").to eq('mph')
+      expect(data['maxspeed']).to eq(25)
+      expect(data['format']).to eq('mph')
+      expect(data['street']).to eq('F Street')
+    end
+
+    it "returns nil when not found" do
+      get :show, latitude: 48.691939992301265, longitude: -122.49252342328188
+      data = JSON.parse(response.body)
+      expect(data['maxspeed']).to eq(nil)
+      expect(data['format']).to eq(nil)
     end
   end
 

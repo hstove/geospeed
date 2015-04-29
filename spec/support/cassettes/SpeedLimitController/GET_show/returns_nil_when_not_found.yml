@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.overpass-api.de/api/xapi?*%5Bmaxspeed%5D=*%5D%5Bbbox=-122.50252342328189,48.68193999230127,-122.48252342328188,48.70193999230126%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 29 Apr 2015 23:27:19 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '218'
+      Content-Type:
+      - application/osm3s+xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <osm version="0.6" generator="Overpass API">
+        <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+        <meta osm_base="2015-04-29T23:26:02Z"/>
+
+
+        </osm>
+    http_version: 
+  recorded_at: Wed, 29 Apr 2015 23:27:20 GMT
+recorded_with: VCR 2.9.3

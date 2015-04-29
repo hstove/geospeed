@@ -4,29 +4,29 @@ class Overpass
       url = url_for(lat, lng)
 
       page = Nokogiri::HTML(HTTParty.get(url))
-      closest = closest_node(page, lat, lng)
+      closest = closest_node_id(page, lat, lng)
       way = page.css("way nd[ref='#{closest}']")[0].try(:parent)
 
       response = {
         maxspeed: nil,
-        format: nil
+        format: nil,
+        street: nil,
       }
 
       if way && (speed = way.css('[k="maxspeed"]')[0])
         value = speed['v']
         parts = value.split(' ')
         response[:format] = parts[1]
-        if parts[1] == 'mph'
-          response[:maxspeed] = parts[0].to_i
-        else
-          response[:maxspeed] = parts[0].to_i * 0.621371
+        response[:maxspeed] = parts[0].to_i
+        if name = way.css('[k="name"]')[0]
+          response[:street] = name['v']
         end
       end
 
       response
     end
 
-    def closest_node(page, lat, lng)
+    def closest_node_id(page, lat, lng)
       nodes = page.css('node')
       nodes = nodes.to_a.sort do |node|
         distance = 0
@@ -34,7 +34,8 @@ class Overpass
         distance += node["lon"].to_f.abs - lng.abs
         distance
       end
-      nodes.first["id"]
+      node = nodes.first
+      node ? nodes.first["id"] : ''
     end
 
     def url_for(lat, lng)
