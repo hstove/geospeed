@@ -2,6 +2,7 @@
   displayName: 'SpeedLimit'
   notAvailable: "n/a"
   lastPosition: null
+  loading: false
   getInitialState: ->
     speedLimit: null
   componentDidMount: ->
@@ -11,7 +12,6 @@
           {latitude, longitude} = coords
           lat = @lastPosition.latitude; lng = @lastPosition.longitude
           distance = @getDistanceFromLatLonInKm(latitude, longitude, lat, lng)
-          console.log distance
           if distance > 0.25
             @fetchSpeedLimit(coords)
         else
@@ -22,22 +22,32 @@
     @lastPosition = coords
     {latitude, longitude} = coords
     url = "/speed_limit/show?latitude=#{latitude}&longitude=#{longitude}"
+    @setState(loading: true)
     $.ajax
       url: url
       dataType: 'json'
       success: ({maxspeed, format}) =>
+        @setState(loading: false)
         Geo.setFormat(format)
         if maxspeed
           @setState speedLimit: Math.round(maxspeed)
         else
           @setState speedLimit: @notAvailable
       error: ->
+        alert('Unable to contact server.')
 
   render: ->
     speedClasses = classNames('fa fa-circle-o-notch fa-spin': !@state.speedLimit)
     containerStyle =
       borderColor: @props.textColor
+    loadingClass = classNames
+      'speed-loader': true
+      'fa': true
+      'fa-refresh': @state.loading
+      'fa-spin': @state.loading
+
     <div id="speed-limit-container" style={containerStyle}>
+      <i className={loadingClass}></i>
       <span id="speed-limit-label">SPEED<br/>LIMIT</span>
       <br/>
       <span id="speed-limit" className={speedClasses}>{@state.speedLimit}</span>
