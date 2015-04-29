@@ -1,0 +1,344 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.overpass-api.de/api/xapi?*%5Bmaxspeed%5D=*%5D%5Bbbox=-122.49758530000001,48.7488802,-122.4775853,48.7688802%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 28 Apr 2015 14:31:35 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Vary:
+      - Accept-Encoding
+      Content-Length:
+      - '2330'
+      Content-Type:
+      - application/osm3s+xml
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <osm version="0.6" generator="Overpass API">
+        <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
+        <meta osm_base="2015-04-28T14:30:02Z"/>
+
+          <node id="37061652" lat="48.7630290" lon="-122.4759240"/>
+          <node id="37062562" lat="48.7546150" lon="-122.4884340"/>
+          <node id="37062563" lat="48.7547348" lon="-122.4882558">
+            <tag k="railway" v="level_crossing"/>
+          </node>
+          <node id="37062565" lat="48.7552060" lon="-122.4875600">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37062568" lat="48.7557220" lon="-122.4868080"/>
+          <node id="37062569" lat="48.7562374" lon="-122.4860346"/>
+          <node id="37062571" lat="48.7567330" lon="-122.4852950"/>
+          <node id="37062574" lat="48.7572350" lon="-122.4845410">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37062577" lat="48.7577320" lon="-122.4838100"/>
+          <node id="37062581" lat="48.7587640" lon="-122.4822610">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37062582" lat="48.7592800" lon="-122.4815200"/>
+          <node id="37062584" lat="48.7599770" lon="-122.4804540"/>
+          <node id="37062587" lat="48.7606720" lon="-122.4794020"/>
+          <node id="37062588" lat="48.7613890" lon="-122.4783600"/>
+          <node id="37062592" lat="48.7620800" lon="-122.4773200"/>
+          <node id="37062595" lat="48.7627860" lon="-122.4762660"/>
+          <node id="37064841" lat="48.7595210" lon="-122.5028720"/>
+          <node id="37065815" lat="48.7571990" lon="-122.4906050"/>
+          <node id="37066805" lat="48.7463900" lon="-122.4739940"/>
+          <node id="37073195" lat="48.7497520" lon="-122.4791630">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37077206" lat="48.7581690" lon="-122.4929990"/>
+          <node id="37079716" lat="48.7601240" lon="-122.4996730"/>
+          <node id="37085472" lat="48.7578310" lon="-122.4918570"/>
+          <node id="37086650" lat="48.7547090" lon="-122.4867990"/>
+          <node id="37091556" lat="48.7450150" lon="-122.4717760">
+            <tag k="crossing" v="traffic_signals"/>
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37093762" lat="48.7597649" lon="-122.5041060">
+            <tag k="railway" v="level_crossing"/>
+          </node>
+          <node id="37095189" lat="48.7567140" lon="-122.4898640"/>
+          <node id="37107298" lat="48.7477300" lon="-122.4760520">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37110117" lat="48.7614070" lon="-122.5042740"/>
+          <node id="37110247" lat="48.7591640" lon="-122.4964110"/>
+          <node id="37110977" lat="48.7577150" lon="-122.4914710">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37111263" lat="48.7457180" lon="-122.4729590">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37114737" lat="48.7619840" lon="-122.5060170"/>
+          <node id="37115760" lat="48.7571228" lon="-122.4929295"/>
+          <node id="37116974" lat="48.7542160" lon="-122.4860200"/>
+          <node id="37119729" lat="48.7555810" lon="-122.4899740"/>
+          <node id="37119732" lat="48.7562050" lon="-122.4890850"/>
+          <node id="37121304" lat="48.7484070" lon="-122.4770910">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37123456" lat="48.7595170" lon="-122.4975710"/>
+          <node id="37123892" lat="48.7598470" lon="-122.4987160"/>
+          <node id="37125213" lat="48.7550970" lon="-122.4891890"/>
+          <node id="37125216" lat="48.7566740" lon="-122.4915580"/>
+          <node id="37125217" lat="48.7568950" lon="-122.4920360"/>
+          <node id="37125219" lat="48.7570670" lon="-122.4924930"/>
+          <node id="37125222" lat="48.7588840" lon="-122.4986960"/>
+          <node id="37125224" lat="48.7592530" lon="-122.5005180"/>
+          <node id="37125226" lat="48.7593970" lon="-122.5013430"/>
+          <node id="37125228" lat="48.7595140" lon="-122.5022930"/>
+          <node id="37125230" lat="48.7595310" lon="-122.5031600"/>
+          <node id="37125232" lat="48.7595590" lon="-122.5034640"/>
+          <node id="37125234" lat="48.7595990" lon="-122.5036860"/>
+          <node id="37125236" lat="48.7596990" lon="-122.5038930"/>
+          <node id="37125239" lat="48.7598670" lon="-122.5044190"/>
+          <node id="37125241" lat="48.7599060" lon="-122.5046800"/>
+          <node id="37125243" lat="48.7599710" lon="-122.5051330"/>
+          <node id="37125245" lat="48.7600990" lon="-122.5056320"/>
+          <node id="37125248" lat="48.7604140" lon="-122.5067270"/>
+          <node id="37125249" lat="48.7606250" lon="-122.5073590"/>
+          <node id="37125250" lat="48.7608310" lon="-122.5078540"/>
+          <node id="37125251" lat="48.7609070" lon="-122.5080060"/>
+          <node id="37125253" lat="48.7609400" lon="-122.5080730"/>
+          <node id="37125255" lat="48.7610970" lon="-122.5083150"/>
+          <node id="37135412" lat="48.7537660" lon="-122.4853410"/>
+          <node id="37137054" lat="48.7607940" lon="-122.5020150"/>
+          <node id="37138237" lat="48.7532830" lon="-122.4846030"/>
+          <node id="37138240" lat="48.7557080" lon="-122.4883260"/>
+          <node id="37143259" lat="48.7470590" lon="-122.4750250">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <node id="37145724" lat="48.7604920" lon="-122.5009230"/>
+          <node id="37145862" lat="48.7588400" lon="-122.4952720"/>
+          <node id="37163127" lat="48.7451070" lon="-122.4720270"/>
+          <node id="37164882" lat="48.7584950" lon="-122.4941320"/>
+          <node id="37164883" lat="48.7609980" lon="-122.5030490"/>
+          <node id="37164884" lat="48.7618110" lon="-122.5055490"/>
+          <node id="37164886" lat="48.7624390" lon="-122.5073070"/>
+          <node id="37164887" lat="48.7624850" lon="-122.5074380"/>
+          <node id="1358216167" lat="48.7547663" lon="-122.4882093">
+            <tag k="railway" v="level_crossing"/>
+          </node>
+          <node id="1358216266" lat="48.7546778" lon="-122.4883407">
+            <tag k="railway" v="level_crossing"/>
+          </node>
+          <node id="2099403222" lat="48.7487516" lon="-122.4776193"/>
+          <node id="2122772749" lat="48.7494141" lon="-122.4786387"/>
+          <node id="2122772797" lat="48.7480794" lon="-122.4765882"/>
+          <node id="2122772856" lat="48.7473976" lon="-122.4755432"/>
+          <node id="2122772910" lat="48.7467461" lon="-122.4745427"/>
+          <node id="2122773056" lat="48.7460639" lon="-122.4734918"/>
+          <node id="2122773085" lat="48.7453794" lon="-122.4724425"/>
+          <node id="2463420402" lat="48.7547084" lon="-122.4882934">
+            <tag k="railway" v="level_crossing"/>
+          </node>
+          <node id="2784733024" lat="48.7596937" lon="-122.4981842"/>
+          <node id="2784733038" lat="48.7586771" lon="-122.4947338"/>
+          <node id="2784733039" lat="48.7583366" lon="-122.4935816"/>
+          <node id="2784733055" lat="48.7580033" lon="-122.4924393"/>
+          <node id="2784733066" lat="48.7593527" lon="-122.4970311"/>
+          <node id="2784733075" lat="48.7612278" lon="-122.5037374"/>
+          <node id="3320059028" lat="48.7577836" lon="-122.4950932"/>
+          <node id="3320059037" lat="48.7583052" lon="-122.4968009"/>
+          <node id="3451392763" lat="48.7490763" lon="-122.4781427">
+            <tag k="highway" v="traffic_signals"/>
+          </node>
+          <way id="5255130">
+            <nd ref="37062562"/>
+            <nd ref="1358216266"/>
+            <nd ref="2463420402"/>
+            <nd ref="37062563"/>
+            <nd ref="1358216167"/>
+            <nd ref="37062565"/>
+            <nd ref="37062568"/>
+            <nd ref="37062569"/>
+            <nd ref="37062571"/>
+            <nd ref="37062574"/>
+            <nd ref="37062577"/>
+            <nd ref="37062581"/>
+            <nd ref="37062582"/>
+            <nd ref="37062584"/>
+            <nd ref="37062587"/>
+            <nd ref="37062588"/>
+            <nd ref="37062592"/>
+            <nd ref="37062595"/>
+            <nd ref="37061652"/>
+            <tag k="highway" v="secondary"/>
+            <tag k="maxspeed" v="25 mph"/>
+            <tag k="name" v="F Street"/>
+            <tag k="tiger:cfcc" v="A41"/>
+            <tag k="tiger:county" v="Whatcom, WA"/>
+            <tag k="tiger:name_base" v="F"/>
+            <tag k="tiger:reviewed" v="no"/>
+          </way>
+          <way id="5265255">
+            <nd ref="37091556"/>
+            <nd ref="37163127"/>
+            <nd ref="2122773085"/>
+            <nd ref="37111263"/>
+            <nd ref="2122773056"/>
+            <nd ref="37066805"/>
+            <nd ref="2122772910"/>
+            <nd ref="37143259"/>
+            <nd ref="2122772856"/>
+            <nd ref="37107298"/>
+            <nd ref="2122772797"/>
+            <nd ref="37121304"/>
+            <nd ref="2099403222"/>
+            <nd ref="3451392763"/>
+            <tag k="bicycle" v="yes"/>
+            <tag k="cycleway" v="no"/>
+            <tag k="highway" v="secondary"/>
+            <tag k="maxspeed" v="25 mph"/>
+            <tag k="name" v="East Holly Street"/>
+            <tag k="old_ref" v="US 99;PSH 1"/>
+            <tag k="oneway" v="yes"/>
+            <tag k="tiger:cfcc" v="A41"/>
+            <tag k="tiger:county" v="Whatcom, WA"/>
+            <tag k="tiger:name_base" v="Holly"/>
+            <tag k="tiger:name_direction_prefix" v="E"/>
+            <tag k="tiger:reviewed" v="no"/>
+            <tag k="tiger:zip_left" v="98225"/>
+            <tag k="tiger:zip_right" v="98225"/>
+          </way>
+          <way id="5265478">
+            <nd ref="37110977"/>
+            <nd ref="37085472"/>
+            <nd ref="2784733055"/>
+            <nd ref="37077206"/>
+            <nd ref="2784733039"/>
+            <nd ref="37164882"/>
+            <nd ref="2784733038"/>
+            <nd ref="37145862"/>
+            <nd ref="37110247"/>
+            <nd ref="2784733066"/>
+            <nd ref="37123456"/>
+            <nd ref="2784733024"/>
+            <nd ref="37123892"/>
+            <nd ref="37079716"/>
+            <nd ref="37145724"/>
+            <nd ref="37137054"/>
+            <nd ref="37164883"/>
+            <nd ref="2784733075"/>
+            <nd ref="37110117"/>
+            <nd ref="37164884"/>
+            <nd ref="37114737"/>
+            <nd ref="37164886"/>
+            <nd ref="37164887"/>
+            <tag k="highway" v="secondary"/>
+            <tag k="maxspeed" v="25 mph"/>
+            <tag k="name" v="Eldridge Avenue"/>
+            <tag k="tiger:cfcc" v="A41"/>
+            <tag k="tiger:county" v="Whatcom, WA"/>
+            <tag k="tiger:name_base" v="Eldridge"/>
+            <tag k="tiger:reviewed" v="no"/>
+            <tag k="tiger:zip_left" v="98225"/>
+            <tag k="tiger:zip_right" v="98225"/>
+          </way>
+          <way id="5920189">
+            <nd ref="37062562"/>
+            <nd ref="37125213"/>
+            <nd ref="37119729"/>
+            <nd ref="37125216"/>
+            <nd ref="37125217"/>
+            <nd ref="37125219"/>
+            <nd ref="37115760"/>
+            <nd ref="3320059028"/>
+            <nd ref="3320059037"/>
+            <nd ref="37125222"/>
+            <nd ref="37125224"/>
+            <nd ref="37125226"/>
+            <nd ref="37125228"/>
+            <nd ref="37064841"/>
+            <nd ref="37125230"/>
+            <nd ref="37125232"/>
+            <nd ref="37125234"/>
+            <nd ref="37125236"/>
+            <nd ref="37093762"/>
+            <nd ref="37125239"/>
+            <nd ref="37125241"/>
+            <nd ref="37125243"/>
+            <nd ref="37125245"/>
+            <nd ref="37125248"/>
+            <nd ref="37125249"/>
+            <nd ref="37125250"/>
+            <nd ref="37125251"/>
+            <nd ref="37125253"/>
+            <nd ref="37125255"/>
+            <tag k="highway" v="secondary"/>
+            <tag k="maxspeed" v="35 mph"/>
+            <tag k="name" v="Roeder Avenue"/>
+            <tag k="tiger:cfcc" v="A41"/>
+            <tag k="tiger:county" v="Whatcom, WA"/>
+            <tag k="tiger:name_base" v="Roeder"/>
+            <tag k="tiger:reviewed" v="no"/>
+          </way>
+          <way id="55603874">
+            <nd ref="37138237"/>
+            <nd ref="37135412"/>
+            <nd ref="37116974"/>
+            <nd ref="37086650"/>
+            <nd ref="37062565"/>
+            <nd ref="37138240"/>
+            <nd ref="37119732"/>
+            <nd ref="37095189"/>
+            <nd ref="37065815"/>
+            <nd ref="37110977"/>
+            <tag k="highway" v="secondary"/>
+            <tag k="maxspeed" v="25 mph"/>
+            <tag k="name" v="West Holly Street"/>
+            <tag k="tiger:cfcc" v="A41"/>
+            <tag k="tiger:county" v="Whatcom, WA"/>
+            <tag k="tiger:name_base" v="Holly"/>
+            <tag k="tiger:name_direction_prefix" v="W"/>
+            <tag k="tiger:reviewed" v="no"/>
+            <tag k="tiger:separated" v="no"/>
+            <tag k="tiger:source" v="tiger_import_dch_v0.6_20070829"/>
+            <tag k="tiger:tlid" v="183771702:183771705:183771742:183771746:183771908:183771711:183805343:183805344:183771930:183771936:183771949:183771910:183771697:183771971:183771967"/>
+            <tag k="tiger:zip_left" v="98225"/>
+            <tag k="tiger:zip_right" v="98225"/>
+          </way>
+          <way id="338075762">
+            <nd ref="3451392763"/>
+            <nd ref="2122772749"/>
+            <nd ref="37073195"/>
+            <tag k="bicycle" v="yes"/>
+            <tag k="cycleway" v="no"/>
+            <tag k="highway" v="secondary"/>
+            <tag k="maxspeed" v="25 mph"/>
+            <tag k="name" v="East Holly Street"/>
+            <tag k="old_ref" v="US 99;PSH 1"/>
+            <tag k="oneway" v="yes"/>
+            <tag k="tiger:cfcc" v="A41"/>
+            <tag k="tiger:county" v="Whatcom, WA"/>
+            <tag k="tiger:name_base" v="Holly"/>
+            <tag k="tiger:name_direction_prefix" v="E"/>
+            <tag k="tiger:reviewed" v="no"/>
+            <tag k="tiger:zip_left" v="98225"/>
+            <tag k="tiger:zip_right" v="98225"/>
+          </way>
+
+        </osm>
+    http_version: 
+  recorded_at: Tue, 28 Apr 2015 14:31:43 GMT
+recorded_with: VCR 2.9.3
