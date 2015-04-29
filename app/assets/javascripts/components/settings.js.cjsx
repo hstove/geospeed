@@ -25,6 +25,16 @@
             <i className="fa fa-github"></i>
           </a>
         </li>
+        <li>
+          <a href="https://twitter.com/home?status=Geospeed%20-%20an%20app%20for%20getting%20the%20speed%20limit%20wherever%20you%20are.%20http://geospeed.co" target="_blank" style={textStyle}>
+            <i className="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://geospeed.co" target="_blank" style={textStyle}>
+            <i className="fa fa-facebook"></i>
+          </a>
+        </li>
         <li onClick={@showColorPicker}>
           <i className="color-square" style={borderColor: @props.textColor}>
             {colors}

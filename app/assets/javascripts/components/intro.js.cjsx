@@ -9,7 +9,7 @@
       <br/>
       <h3>
         Geospeed is an app for getting the current speed limit
-        when you are driving.
+        wherever you are.
       </h3>
       <br/>
       <br/>
