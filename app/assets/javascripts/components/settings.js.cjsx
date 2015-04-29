@@ -20,6 +20,17 @@
         <li onClick={@toggleExpanded}>
           <i className="fa fa-cog" id="settings-activate"></i>
         </li>
+        <li onClick={@props.refresh}>
+          <i className="fa fa-refresh"></i>
+        </li>
+        <li onClick={@props.flip}>
+          <i className="fa fa-arrows-h"></i>
+        </li>
+        <li onClick={@showColorPicker}>
+          <i className="color-square" style={borderColor: @props.textColor}>
+            {colors}
+          </i>
+        </li>
         <li>
           <a href="https://github.com/hstove/geospeed" target="_blank" style={textStyle}>
             <i className="fa fa-github"></i>
@@ -34,11 +45,6 @@
           <a href="https://www.facebook.com/sharer/sharer.php?u=http://geospeed.co" target="_blank" style={textStyle}>
             <i className="fa fa-facebook"></i>
           </a>
-        </li>
-        <li onClick={@showColorPicker}>
-          <i className="color-square" style={borderColor: @props.textColor}>
-            {colors}
-          </i>
         </li>
       </ul>
     </div>

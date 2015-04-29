@@ -19,8 +19,8 @@
 
 
   fetchSpeedLimit: (coords) ->
-    @lastPosition = coords
-    {latitude, longitude} = coords
+    @lastPosition = coords if coords
+    {latitude, longitude} = @lastPosition
     url = "/speed_limit/show?latitude=#{latitude}&longitude=#{longitude}"
     @setState(loading: true)
     $.ajax
@@ -29,7 +29,6 @@
       success: ({maxspeed, format}) =>
         @setState(loading: false)
         Geo.setFormat(format)
-        console.log maxspeed
         if maxspeed
           @setState speedLimit: Math.round(maxspeed)
         else

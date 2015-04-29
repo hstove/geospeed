@@ -6,5 +6,9 @@
   render: ->
     <div>
       <Speed speedFormat={@props.speedFormat}/>
-      <SpeedLimit speedFormat={@props.speedFormat} textColor={@props.textColor}/>
+      <SpeedLimit speedFormat={@props.speedFormat} textColor={@props.textColor}
+        ref="speedLimit"/>
     </div>
+
+  refresh: ->
+    @refs.speedLimit.fetchSpeedLimit()

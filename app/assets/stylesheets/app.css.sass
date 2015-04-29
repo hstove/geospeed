@@ -59,7 +59,7 @@ html
   border-radius: 3px
   &.expanded
     ul
-      width: 200px
+      width: 280px
     #settings-activate
       transform: rotate(360deg)
   ul
@@ -99,3 +99,8 @@ html
   border-radius: 4px
   cursor: pointer
   margin: 20px 0
+
+.flipped
+  #speed-limit-container, #speed-container
+    transform: scaleX(-1)
+    filter: flipH

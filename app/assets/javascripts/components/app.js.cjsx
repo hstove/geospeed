@@ -11,7 +11,7 @@ watchId = null
   getInitialState: ->
     state = Storage.state [
       'introed', 'geoAllowed', 'lastPosition', 'speedFormat', 'backgroundColor',
-      'textColor'
+      'textColor', 'flipped'
     ]
     state.geoError = null
     state.backgroundColor ||= 'rgba(142, 68, 173,1.0)'
@@ -23,7 +23,7 @@ watchId = null
 
     if @state.introed
       if @state.geoAllowed
-        appInner = <SpeedApp speedFormat={@state.speedFormat}
+        appInner = <SpeedApp speedFormat={@state.speedFormat} ref="speedApp"
           textColor={@state.textColor}/>
       else if !navigator?.geolocation
         appInner = <InvalidBrowser />
@@ -39,7 +39,8 @@ watchId = null
       backgroundColor: @state.backgroundColor
       color: @state.textColor
 
-    <div id="app" style={appStyles}>
+    appClass = classNames flipped: !!@state.flipped
+    <div id="app" style={appStyles} className={appClass}>
       <div className="container">
         <div className="row">
           <div className="col-xs-12">
@@ -47,7 +48,8 @@ watchId = null
           </div>
         </div>
       </div>
-      <Settings textColor={@state.textColor} backgroundColor={@state.backgroundColor}/>
+      <Settings textColor={@state.textColor} backgroundColor={@state.backgroundColor}
+        refresh={@refresh} flip={@flip}/>
       <ColorPicker backgroundColor={@state.backgroundColor} saveColor={@saveColor}/>
     </div>
 
@@ -82,3 +84,10 @@ watchId = null
 
   saveColor: (color) ->
     @setState backgroundColor: color
+
+  refresh: ->
+    @refs.speedApp.refresh()
+    console.log 'refresh'
+
+  flip: ->
+    @setState flipped: !@state.flipped
