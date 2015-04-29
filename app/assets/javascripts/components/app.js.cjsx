@@ -2,6 +2,7 @@
 #= require components/invalid_browser
 #= require components/intro
 #= require components/speed_app
+#= require colors
 
 watchId = null
 
@@ -46,6 +47,8 @@ watchId = null
           </div>
         </div>
       </div>
+      <Settings textColor={@state.textColor} backgroundColor={@state.backgroundColor}/>
+      <ColorPicker backgroundColor={@state.backgroundColor} saveColor={@saveColor}/>
     </div>
 
   componentDidMount: ->
@@ -76,3 +79,6 @@ watchId = null
 
   positionError: (message) ->
     @setState geoError: message
+
+  saveColor: (color) ->
+    @setState backgroundColor: color

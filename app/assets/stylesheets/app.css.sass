@@ -43,3 +43,55 @@ html
   height: 100%
   body
     height: 100%
+
+#settings-container
+  position: absolute
+  bottom: 10px
+  left: 10px
+  height: 40px
+  text-align: center
+  transition: width border-color 0.3s
+  overflow: hidden
+  border-radius: 3px
+  &.expanded
+    ul
+      width: 120px
+    #settings-activate
+      transform: rotate(360deg)
+  ul
+    width: 40px
+    padding: 0
+    margin: 0
+    transition: 0.3s width
+    li
+      list-style: none
+      line-height: 40px
+      width: 40px
+      font-size: 18px
+      cursor: pointer
+      float: left
+      &:hover
+        background-color: rgba(0,0,0,0.1)
+  #settings-activate
+    transition: 0.3s transform
+.color-square
+  width: 18px
+  height: 18px
+  border-radius: 2px
+  display: inline-block
+  border-width: 1px
+  border-style: solid
+  box-sizing: content-box
+  position: relative
+  top: 3px
+  .mini-color-square
+    width: 6px
+    height: 6px
+    float: left
+.color-square-big
+  @extend .color-square
+  width: 50px
+  height: 50px
+  border-radius: 4px
+  cursor: pointer
+  margin: 20px 0

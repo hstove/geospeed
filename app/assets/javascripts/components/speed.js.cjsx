@@ -5,7 +5,6 @@
   componentDidMount: ->
     Geo.init
       success: ({coords}) =>
-        console.log 'speed', coords
         if speed = coords.speed
           @setState speedInMPS: speed
   render: ->

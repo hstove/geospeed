@@ -8,5 +8,3 @@
       <Speed speedFormat={@props.speedFormat}/>
       <SpeedLimit speedFormat={@props.speedFormat} textColor={@props.textColor}/>
     </div>
-
-  componentDidMount: ->

@@ -477,6 +477,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord-postgis-adapter (= 3.0.0.beta1)
   acts_as_list
+  autoprefixer-rails
   awesome_print
   backbone-rails
   better_errors
