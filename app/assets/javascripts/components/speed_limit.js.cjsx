@@ -29,12 +29,13 @@
       success: ({maxspeed, format}) =>
         @setState(loading: false)
         Geo.setFormat(format)
+        console.log maxspeed
         if maxspeed
           @setState speedLimit: Math.round(maxspeed)
         else
           @setState speedLimit: @notAvailable
       error: ->
-        alert('Unable to contact server.')
+
 
   render: ->
     speedClasses = classNames('fa fa-circle-o-notch fa-spin': !@state.speedLimit)

@@ -10,6 +10,17 @@
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
     %meta{name: "apple-mobile-web-app-capable", content: "yes"}
+    %meta{name: "og:title", content: "Geospeed"}
+    %meta{name: "og:url", content: "http://geospeed.co"}
+    %meta{name: "og:image", content: "/ios/iTunesArtwork@2x.png"}
+    %meta{name: "twitter:card", content: "summary"}
+    %meta{name: "twitter:site", content: "@heynky"}
+    %meta{name: "twitter:title", content: "Geospeed"}
+    %meta{name: "twitter:url", content: "http://geospeed.co"}
+    %meta{name: "twitter:image", content: "http://geospeed.co/ios/iTunesArtwork@2x.png"}
+    %meta{name: "twitter:description", content: "An app for getting the speed limit wherever you are."}
+    %meta{name: "og:description", content: "An app for getting the speed limit wherever you are."}
+    %meta{name: "description", content: "An app for getting the speed limit wherever you are."}
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     %link{rel: "apple-touch-icon", href: "/ios/AppIcon.appiconset/Icon-40@2x.png", sizes: "80x80"}
     %link{rel: "apple-touch-icon", href: "/ios/AppIcon.appiconset/Icon-60@2x.png", sizes: "120x120"}
@@ -23,6 +34,5 @@
     = favicon_link_tag
     = yield(:head)
     = analytics_init if Rails.env.production?
-
   %body
     = yield
