@@ -2,6 +2,7 @@
 #= require components/invalid_browser
 #= require components/intro
 #= require components/speed_app
+#= require components/geo_blocked
 #= require colors
 
 watchId = null
@@ -25,6 +26,8 @@ watchId = null
       if @state.geoAllowed
         appInner = <SpeedApp speedFormat={@state.speedFormat} ref="speedApp"
           textColor={@state.textColor}/>
+      else if @state.geoError
+        appInner = <GeoBlocked />
       else if !navigator?.geolocation
         appInner = <InvalidBrowser />
       else
