@@ -27,15 +27,28 @@ class Overpass
     end
 
     def closest_node_id(page, lat, lng)
+      distances = {}
       nodes = page.css('node')
-      nodes = nodes.to_a.sort do |node|
-        distance = 0
-        distance += node["lat"].to_f.abs - lat.abs
-        distance += node["lon"].to_f.abs - lng.abs
-        distance
+      nodes = nodes.to_a.sort do |node1, node2|
+        distance1 = distance_from_node(node1, lat, lng)
+        distance2 = distance_from_node(node2, lat, lng)
+
+        node = nodes.select {|n| n['id'] == node1['id'] }[0]
+        distances[node['id']] ||= distance1 if node
+
+        distance1 <=> distance2
       end
+
       node = nodes.first
+      Rails.logger.info "Node Distance - #{distances[node['id']]}" if node
       node ? nodes.first["id"] : ''
+    end
+
+    def distance_from_node(node, lat, lng)
+      distance = 0
+      distance += (node["lat"].to_f.abs - lat.abs).abs
+      distance += (node["lon"].to_f.abs - lng.abs).abs
+      distance
     end
 
     def url_for(lat, lng)
