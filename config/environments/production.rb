@@ -1,24 +1,24 @@
 Rails.application.configure do
   config.cache_store = :dalli_store
-GA.tracker = ENV['GOOGLE_ANALYTICS_ID']
+  GA.tracker = ENV['GOOGLE_ANALYTICS_ID']
 
-config.logger = Logger.new(STDOUT)
+  config.logger = Logger.new(STDOUT)
 
-ActionMailer::Base.smtp_settings = {
-  :address        => 'smtp.sendgrid.net',
-  :port           => '587',
-  :authentication => :plain,
-  :user_name      => ENV['SENDGRID_USERNAME'],
-  :password       => ENV['SENDGRID_PASSWORD'],
-  :domain         => 'heroku.com',
-  :enable_starttls_auto => true
-}
-
-config.middleware.use ExceptionNotification::Rack,
-  :ignore_crawlers => %w{Googlebot bingbot googlebot YandexBot bot},
-  :email => {
-    :exception_recipients => %w{hstove@gmail.com},
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
   }
+
+  config.middleware.use ExceptionNotification::Rack,
+    :ignore_crawlers => %w{Googlebot bingbot googlebot YandexBot bot},
+    :email => {
+      :exception_recipients => %w{hstove@gmail.com},
+    }
 
 
   # Settings specified here will take precedence over those in config/application.rb.
