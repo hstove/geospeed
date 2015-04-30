@@ -28,6 +28,7 @@
       url: url
       dataType: 'json'
       success: ({maxspeed, format, street}) =>
+        analytics?.track('Loaded Speed Limit')
         @setState(loading: false)
         Geo.setFormat(format)
         if maxspeed

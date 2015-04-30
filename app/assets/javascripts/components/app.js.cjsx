@@ -61,6 +61,7 @@ watchId = null
       Storage.set(key, val)
 
   getStarted: ->
+    analytics?.track('Got Started')
     @setState(introed: true)
     false
 
@@ -76,6 +77,7 @@ watchId = null
     true
 
   positionSuccess: (position) ->
+    analytics?.track('Gave Geo Permission')
     @setState
       geoAllowed: true
 
@@ -86,8 +88,10 @@ watchId = null
     @setState backgroundColor: color
 
   refresh: ->
+    analytics?.track 'Refresh'
     @refs.speedApp.refresh()
     console.log 'refresh'
 
   flip: ->
+    analytics?.track "Flip"
     @setState flipped: !@state.flipped
