@@ -12,6 +12,7 @@
           {latitude, longitude} = coords
           lat = @lastPosition.latitude; lng = @lastPosition.longitude
           distance = @getDistanceFromLatLonInKm(latitude, longitude, lat, lng)
+          @lastPosition = coords
           if distance > 0.25
             @fetchSpeedLimit(coords)
         else
@@ -26,13 +27,14 @@
     $.ajax
       url: url
       dataType: 'json'
-      success: ({maxspeed, format}) =>
+      success: ({maxspeed, format, street}) =>
         @setState(loading: false)
         Geo.setFormat(format)
         if maxspeed
           @setState speedLimit: Math.round(maxspeed)
         else
           @setState speedLimit: @notAvailable
+        @props.setStreet street
       error: ->
 
 

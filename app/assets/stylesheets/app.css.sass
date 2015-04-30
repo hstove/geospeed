@@ -4,8 +4,17 @@
 
 #speed-container
   margin-top: 10px
+  width: 50%
   .speed
     font-size: 36px
+
+#street-container
+  position: absolute
+  top: 14px
+  right: 10px
+  font-size: 24px
+  width: 50%
+  text-align: right
 
 $six-plus-width: 414
 $six-width: 375
@@ -101,6 +110,8 @@ html
   margin: 20px 0
 
 .flipped
-  #speed-limit-container, #speed-container
+  #speed-limit-container, #speed-container, #street-container
     transform: scaleX(-1)
     filter: flipH
+  #street-container
+    text-align: left

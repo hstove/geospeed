@@ -18,7 +18,7 @@ class @Geo
       navigator.geolocation.getCurrentPosition opts.success, opts.error, options
     else
       @successCbs.push opts.success
-      @errorCbs.push opts.error
+      @errorCbs.push opts.error if opts.error
       @watchId ||= navigator.geolocation.watchPosition @positionSuccess, @positionError, options
       true
 
