@@ -69,7 +69,6 @@ gem 'httparty'
 gem 'sprockets-coffee-react'
 gem 'react-rails'
 gem "autoprefixer-rails"
-gem 'better_logging'
 group :test, :development do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

@@ -2,12 +2,8 @@ require 'rubygems'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'capybara/rspec'
 require 'database_cleaner'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
-# ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
-
-Capybara.javascript_driver = :webkit
 
 VCR.configure do |c|
   c.cassette_library_dir = 'spec/support/cassettes'
@@ -18,7 +14,6 @@ end
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
-  config.include Capybara::DSL
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :deletion
