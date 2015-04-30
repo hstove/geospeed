@@ -1,0 +1,16 @@
+{
+    "name": "Geospeed",
+    "description": "An app for getting the current speed limit, wherever you are.",
+    "website": "http://geospeed.co",
+    "repository": "https://github.com/hstove/geospeed",
+    "success_url": "/",
+    "keywords": [
+        "rails",
+        "react"
+    ],
+    "addons": [
+        "Sendgrid",
+        "Redis To Go",
+        "MemCachier"
+    ]
+}
