@@ -44,3 +44,7 @@ Running `guard` will startup the server and setup LiveReload and `guard-rspec`.
 You can self host this app with the click of a button:
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/hstove/geospeed)
+
+----
+
+![codeship](https://codeship.com/projects/c2a84230-d3f1-0132-ce9d-6a9d26101b06/status?branch=master)
