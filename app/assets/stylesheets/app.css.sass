@@ -70,7 +70,7 @@ html
     ul
       width: 280px
     #settings-activate
-      transform: rotate(360deg)
+      transform: rotate(180deg)
   ul
     width: 40px
     padding: 0
@@ -86,7 +86,8 @@ html
       &:hover
         background-color: rgba(0,0,0,0.1)
   #settings-activate
-    transition: 0.3s transform
+    transition: all 0.3s cubic-bezier(0.63, 0, 0.31, 1)
+    transition-property: -webkit-transform transform -moz-transform -ms-transform
 .color-square
   width: 18px
   height: 18px
