@@ -1,4 +1,3 @@
-#= require components/geo_permitter
 #= require components/invalid_browser
 #= require components/intro
 #= require components/speed_app
@@ -22,21 +21,18 @@ watchId = null
   render: ->
     @dumpState()
 
-    if @state.introed
-      if @state.geoAllowed
-        appInner = <SpeedApp speedFormat={@state.speedFormat} ref="speedApp"
-          textColor={@state.textColor}/>
-      else if @state.geoError
-        appInner = <GeoBlocked />
-      else if !navigator?.geolocation
-        appInner = <InvalidBrowser />
-      else
-        appInner = <GeoPermitter getPermission={@getPermission}/>
-      inner = <div key="app-inner">
-        {appInner}
-      </div>
+    if @state.geoAllowed
+      appInner = <SpeedApp speedFormat={@state.speedFormat} ref="speedApp"
+        textColor={@state.textColor}/>
+    else if @state.geoError
+      appInner = <GeoBlocked />
+    else if !navigator?.geolocation
+      appInner = <InvalidBrowser />
     else
-      inner = <Intro getStarted={@getStarted}/>
+      appInner = <Intro getStarted={@getPermission}/>
+    inner = <div key="app-inner">
+      {appInner}
+    </div>
 
     appStyles =
       backgroundColor: @state.backgroundColor
